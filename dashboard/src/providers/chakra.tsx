@@ -31,6 +31,7 @@ const theme = extendTheme({
     textBlack: "#22242C",
     appOrange: "#FFB74A",
     appRed: "#FF4A55",
+    appLightGray:'#DADDDD',
     appGray: {
       50: "#FAFAFA",
       100: " #F5F5F5",

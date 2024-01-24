@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import CustomChakraProvider from "@/providers/chakra";
-
-const PlusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],variable:'--font-plus-jakarta'
-});
+import { fonts } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Dashboard Design",
@@ -20,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={PlusJakartaSans.variable}>
+      <body className={fonts.PlusJakartaSans.variable}>
         <CustomChakraProvider>{children}</CustomChakraProvider>
       </body>
     </html>
