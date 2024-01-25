@@ -16,7 +16,8 @@ export default function Header() {
   return (
     <HStack
       w={"full"}
-      p={"18px"}
+      py={"18px"}
+      px={5}
       bg={"appGray.50"}
       borderBottom={"1px"}
       borderBottomColor={"#E5EAEF"}
@@ -28,8 +29,15 @@ export default function Header() {
           <Heading fontSize={"20px"} fontWeight={"medium"}>
             Dashboard
           </Heading>
-
-          <Flex pos={"relative"} width={"349px"}>
+          <Image
+            hideFrom={"850px"}
+            src="/icons/search.svg"
+            zIndex={4}
+            w={"18px"}
+            h={"18px"}
+            alt=""
+          />
+          <Flex pos={"relative"} width={"349px"} hideBelow={"850px"}>
             <Image
               src="/icons/search.svg"
               zIndex={4}
@@ -61,14 +69,18 @@ export default function Header() {
         </HStack>
         {/* SEARCH AREA END */}
 
-        <HStack gap={5} maxW={"488px"}>
+        <HStack gap={5} maxW={"488px"} flexShrink={0}>
           {/* NOTIFICATION AREA START */}
 
-          <HStack maxW={"253px"} gap={5}>
-            <HStack px={4} py={2} gap={2}>
+          <HStack maxW={"253px"} gap={{ base: 3, lg: 5 }}>
+            <HStack px={4} py={2} gap={2} hideBelow={"550px"}>
               <Image src="/icons/calender.svg" alt="" />
               <Text as={"span"} fontWeight={"medium"} fontSize={"14px"}>
-                November 15, 2023
+                Nov
+                <Text as={"span"} hideBelow={"md"}>
+                  ember
+                </Text>{" "}
+                15, 2023
               </Text>
             </HStack>
             <IconButton
@@ -94,7 +106,7 @@ export default function Header() {
             h={"52px"}
             flexShrink={0}
             alignItems={"center"}
-            w={"215px"}
+            maxW={"215px"}
             border={"1px"}
             borderColor={"appLightGray"}
             px={2}
@@ -104,14 +116,15 @@ export default function Header() {
           >
             <Flex gap={2} align={"center"}>
               <Image
+                flexShrink={0}
                 alt=""
-                src=""
-                w={"38px"}
-                h={"38px"}
-                rounded={"full"}
-                objectFit={"fill"}
+                src="/user.jpg"
+                w={{ md: "38px", base: "30px" }}
+                h={{ md: "38px", base: "30px" }}
+                rounded={"19px"}
+                objectFit={"cover"}
               />
-              <Flex direction={"column"} gap={1}>
+              <Flex direction={"column"} gap={1} hideBelow={"lg"}>
                 <Text
                   fontSize={"16px"}
                   color={"#26282C"}

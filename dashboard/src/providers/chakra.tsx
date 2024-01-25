@@ -7,11 +7,14 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
   initialColorMode: "light",
 };
-const theme = extendTheme({
+const theme = extendTheme({ fonts: {
+      heading: 'var(--font-jakarta)',
+      body: 'var(--font-jakarta)',
+    },
   config,
   colors: {
     strokeColor: "#EDF2F7",
-    error2: "#ED544E",
+    appRed: "#ED544E",
     appBg: "#fdfdfd",
     success: "#00AC56",
     error: "#FF1F7D",
@@ -20,6 +23,7 @@ const theme = extendTheme({
     secondary: "#3a3f51",
     sidebarBg: "#F7F8FA",
     appGreenTrans12: "rgba(52, 202, 165, 0.12)",
+    appRedTrans12: "rgba(237, 84, 78, 0.12)",
     appGreen: "#34CAA5",
     appLemon: "rgba(119, 185, 0, 1)",
     appLemonTrans: "rgba(119, 185, 0, 0)",
@@ -30,8 +34,8 @@ const theme = extendTheme({
     appBlue: "#54C5EB",
     textBlack: "#22242C",
     appOrange: "#FFB74A",
-    appRed: "#FF4A55",
-    appLightGray:'#DADDDD',
+    appRed2: "#FF4A55",
+    appLightGray: "#DADDDD",
     appGray: {
       50: "#FAFAFA",
       100: " #F5F5F5",

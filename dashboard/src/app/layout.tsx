@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={fonts.PlusJakartaSans.variable}>
       <body className={fonts.PlusJakartaSans.variable}>
         <CustomChakraProvider>{children}</CustomChakraProvider>
       </body>
