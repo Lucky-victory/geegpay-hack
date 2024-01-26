@@ -3,7 +3,7 @@ import { Box, Flex, Stack } from "@chakra-ui/react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
-import ChartComp from "@/components/Chart";
+import ChartComp from "@/components/chart";
 import FilesTable from "@/components/FilesTable";
 import SalesReport from "@/components/SalesReport";
 

@@ -28,6 +28,7 @@ export default function Sidebar() {
       left={0}
       w={"80px"}
       flexShrink={0}
+      zIndex={50}
       h={"full"}
       className="sidebar-main-wrap"
       pb={10}

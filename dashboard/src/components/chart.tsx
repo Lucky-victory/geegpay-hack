@@ -9,6 +9,7 @@ import {
   ColumnSeries,
   Tooltip,
 } from "react-jsx-highcharts";
+
 import Highcharts from "highcharts";
 
 export default function ChartComp() {
