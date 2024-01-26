@@ -2,7 +2,16 @@ import { Box, Flex } from "@chakra-ui/react";
 
 export default function Sidebar() {
   return (
-    <Box bg={"white"} w={"80px"} flexShrink={0} h={"full"} pb={10}>
+    <Box
+      bg={"white"}
+      pos={"fixed"}
+      top={0}
+      left={0}
+      w={"80px"}
+      flexShrink={0}
+      h={"full"}
+      pb={10}
+    >
       <Flex
         direction={"column"}
         justifyContent={"space-between"}

@@ -27,7 +27,7 @@ export default function Cards() {
   ];
   return (
     <Flex
-      gap={5}
+      gap={4}
       maxW={{ xl: "500px", "2xl": "500px", base: "auto" }}
       wrap={"wrap"}
     >

@@ -1,5 +1,13 @@
 //@ts-nocheck
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import {
   HighchartsChart,
   HighchartsProvider,
@@ -129,14 +137,14 @@ export default function Chart() {
       py={4}
       w={{ xl: "806px", base: "full" }}
       flex={1}
-      h={"380px"}
+      h={"374px"}
       border={"1px"}
       borderColor={"strokeColor"}
       rounded={"14px"}
       bg={"white"}
       pos={"relative"}
     >
-      <Flex mb={"10px"}>
+      <Flex mb={"10px"} justify={"space-between"}>
         <Heading
           fontWeight={"semibold"}
           fontSize={"18px"}
@@ -145,6 +153,33 @@ export default function Chart() {
         >
           Sales Trends
         </Heading>
+        <HStack gap={"10px"}>
+          <Text
+            as={"span"}
+            fontWeight={"medium"}
+            color={"secondary"}
+            fontSize={"14px"}
+          >
+            Sort by:
+          </Text>
+          <Button
+            variant={"ghost"}
+            colorScheme="appGray"
+            color={"secondary"}
+            rounded={"full"}
+            px={3}
+            py={"6px"}
+            gap={"10px"}
+            border={"1px"}
+            h={8}
+            borderColor={"#E1DFDF"}
+          >
+            <Text fontSize={"12px"} as={"span"}>
+              Weekly
+            </Text>{" "}
+            <Image alt="" src="/icons/chevron-down.svg" />
+          </Button>
+        </HStack>
       </Flex>
       <HighchartsProvider Highcharts={Highcharts}>
         <HighchartsChart
@@ -163,7 +198,7 @@ export default function Chart() {
               width: 80,
               padding: "5px 15px",
               fontSize: "12px",
-              fontWeight: "medium",
+              fontWeight: 500,
               fontFamily: "var(--font-jakarta)",
             }}
             valuePrefix="$"
@@ -171,7 +206,15 @@ export default function Chart() {
             pointFormat="{tooltip.valuePrefix}{point.y}"
             // format={"<b style='font-family:500'></b>"}
           />
-          <ReactChart style={{ flex: 1 }} height={"324px"} />
+          <ReactChart
+            style={{ flex: 1 }}
+            height={"312px"}
+            // backgroundColor={"red"}
+            spacingLeft={4}
+            spacingRight={4}
+            spacingBottom={10}
+            // spacingTop={10}
+          />
           <XAxis
             lineWidth={0}
             labels={{
@@ -212,9 +255,7 @@ export default function Chart() {
                 return Highcharts.numberFormat(ctx.value, 0, ",", ".");
               },
             }}
-            // tickmarkPlacement={"between"}
-            // tickWidth={2}
-
+            tickInterval={5000}
             tickPositions={[0, 5000, 10000, 20000, 30000, 40000, 50000]}
             gridLineWidth={1}
             gridLineDashStyle="LongDash"
@@ -275,7 +316,7 @@ export default function Chart() {
               borderRadius={"50px"}
               borderWidth={0}
               data={[
-                6500, 22000, 3500, 27000, 8000, 45000, 9000, 15000, 33000, 8500,
+                8000, 22000, 3500, 27000, 8000, 44500, 9000, 15000, 33000, 8500,
                 29500, 26000,
               ]}
             />
