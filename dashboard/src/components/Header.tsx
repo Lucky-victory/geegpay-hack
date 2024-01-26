@@ -73,11 +73,11 @@ export default function Header() {
           {/* NOTIFICATION AREA START */}
 
           <HStack maxW={"253px"} gap={{ base: 3, lg: 5 }}>
-            <HStack px={4} py={2} gap={2} hideBelow={"550px"}>
+            <HStack px={4} py={2} gap={2} hideBelow={"550px"} flexShrink={0}>
               <Image src="/icons/calender.svg" alt="" />
               <Text as={"span"} fontWeight={"medium"} fontSize={"14px"}>
                 Nov
-                <Text as={"span"} hideBelow={"md"}>
+                <Text as={"span"} hideBelow={"lg"}>
                   ember
                 </Text>{" "}
                 15, 2023
@@ -124,7 +124,7 @@ export default function Header() {
                 rounded={"19px"}
                 objectFit={"cover"}
               />
-              <Flex direction={"column"} gap={1} hideBelow={"lg"}>
+              <Flex direction={"column"} gap={1} hideBelow={"xl"}>
                 <Text
                   fontSize={"16px"}
                   color={"#26282C"}
