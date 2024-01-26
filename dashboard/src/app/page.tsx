@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
-import Chart from "@/components/Chart";
+import ChartComp from "@/components/Chart";
 import FilesTable from "@/components/FilesTable";
 import SalesReport from "@/components/SalesReport";
 
@@ -27,7 +25,7 @@ export default function Home() {
 
         <Box bg={"appGray.50"} p={5} maxW={"full"}>
           <Flex gap={"4"} wrap={"wrap"}>
-            <Chart />
+            <ChartComp />
             <Cards />
           </Flex>
           <Flex my={4} gap={"4"} wrap={"wrap"} maxW={"full"}>

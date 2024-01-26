@@ -10,9 +10,8 @@ import {
   Tooltip,
 } from "react-jsx-highcharts";
 import Highcharts from "highcharts";
-import { useEffect } from "react";
 
-export default function Chart() {
+export default function ChartComp() {
   return (
     <Flex
       direction={"column"}
