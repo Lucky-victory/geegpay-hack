@@ -19,7 +19,7 @@ export default function ChartComp() {
       minW={"350px"}
       px={5}
       py={4}
-      w={{ xl: "806px", base: "full" }}
+      w={{ base: "full" }}
       flex={1}
       h={"374px"}
       border={"1px"}
@@ -58,7 +58,7 @@ export default function ChartComp() {
             h={8}
             borderColor={"#E1DFDF"}
           >
-            <Text fontSize={"12px"} as={"span"}>
+            <Text fontSize={"12px"} as={"span"} fontWeight={"medium"}>
               Weekly
             </Text>{" "}
             <Image alt="" src="/icons/chevron-down.svg" />

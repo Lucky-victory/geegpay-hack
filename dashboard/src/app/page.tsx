@@ -20,7 +20,7 @@ export default function Home() {
       p={0}
     >
       <Sidebar />
-      <Stack ml={"80px"} gap={0}>
+      <Stack gap={0} className="section-wrap" flex={1}>
         <Header />
 
         <Box bg={"appGray.50"} p={5} maxW={"full"}>

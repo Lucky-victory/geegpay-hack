@@ -1,10 +1,20 @@
-.files-table-body {
-  /* background: #000; */
-  border-bottom: 0px solid red;
+.section-wrap {
+  margin-left: 80px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .sidebar-main-wrap {
-    width: 50px;
+    width: 60px !important;
+  }
+  .section-wrap {
+    margin-left: 60px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .section-wrap {
+    margin-left: 0 !important;
+  }
+  .sidebar-main-wrap {
+    position: relative !important;
   }
 }
 @media screen and (max-height: 730px) {
