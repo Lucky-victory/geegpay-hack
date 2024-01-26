@@ -14,7 +14,7 @@ export default function Home() {
     <Flex
       as="main"
       // w={"100vw"}
-      h={"100vh"}
+      h={{ base: "var(--chakra-vh)", xl: "1080px" }}
       maxW={"1440px"}
       maxH={"1080px"}
       mx={"auto"}
@@ -22,10 +22,10 @@ export default function Home() {
       p={0}
     >
       <Sidebar />
-      <Stack ml={"80px"}>
+      <Stack ml={"80px"} gap={0}>
         <Header />
 
-        <Box bg={"appGray.500"} p={5} maxW={"full"}>
+        <Box bg={"appGray.50"} p={5} maxW={"full"}>
           <Flex gap={"4"} wrap={"wrap"}>
             <Chart />
             <Cards />

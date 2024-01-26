@@ -17,6 +17,7 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+import SectionHeader from "./SectionHeader";
 
 export default function FilesTable() {
   type Status = "Paid" | "Refund";
@@ -81,20 +82,7 @@ export default function FilesTable() {
       bg={"white"}
       //   pos={"relative/"}
     >
-      <HStack justify={"space-between"} mb={"10px"}>
-        <Heading fontWeight={"semibold"} fontSize={"18px"} lineHeight={"26px"}>
-          Last Orders
-        </Heading>
-        <Link
-          href={"#"}
-          fontSize={"18px"}
-          fontWeight={"semibold"}
-          lineHeight={"26px"}
-          color="appGreen"
-        >
-          See All
-        </Link>
-      </HStack>
+      <SectionHeader title="Last Orders" />
       <TableContainer>
         <Table>
           <Thead mb={5}>
@@ -108,7 +96,7 @@ export default function FilesTable() {
               <Th {...tableHeadStyles}>Invoice</Th>
             </Tr>
           </Thead>
-          <Tbody>
+          <Tbody className="files-table-body">
             {data.map((d, i) => (
               <Tr key={"data" + i}>
                 <Td paddingInlineStart={0}>

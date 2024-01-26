@@ -128,14 +128,14 @@ export default function Header() {
                 <Text
                   fontSize={"16px"}
                   color={"#26282C"}
-                  className={fonts.inter.variable}
+                  fontFamily={"var(--font-inter)"}
                   textAlign={"right"}
                 >
                   Justin Bergson
                 </Text>
                 <Text
                   fontSize={"14px"}
-                  className={fonts.inter.variable}
+                  fontFamily={"var(--font-inter)"}
                   textAlign={"right"}
                   color={"#787486"}
                 >

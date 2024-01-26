@@ -1,0 +1,18 @@
+.files-table-body {
+  /* background: #000; */
+  border-bottom: 0px solid red;
+}
+@media screen and (max-height: 730px) {
+  .sidebar-inner {
+    gap: 6px !important;
+  }
+  .sidebar-nav-links {
+    gap: 8px !important;
+  }
+  .sidebar-main-wrap {
+    padding-bottom: 25px !important;
+  }
+  .sidebar-main-wrap > div {
+    padding-bottom: 8px;
+  }
+}
