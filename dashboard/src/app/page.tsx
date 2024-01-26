@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Flex
       as="main"
-      // w={"100vw"}
+      w={"100vw"}
       h={{ base: "var(--chakra-vh)", xl: "1080px" }}
       maxW={"1440px"}
       maxH={"1080px"}

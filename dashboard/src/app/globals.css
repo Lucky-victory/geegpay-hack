@@ -2,6 +2,11 @@
   /* background: #000; */
   border-bottom: 0px solid red;
 }
+@media screen and (max-width: 600px) {
+  .sidebar-main-wrap {
+    width: 50px;
+  }
+}
 @media screen and (max-height: 730px) {
   .sidebar-inner {
     gap: 6px !important;
