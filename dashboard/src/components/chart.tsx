@@ -195,15 +195,14 @@ export default function Chart() {
             borderRadius={5}
             style={{
               color: "white",
-              width: 80,
-              padding: "5px 15px",
+
               fontSize: "12px",
               fontWeight: 500,
               fontFamily: "var(--font-jakarta)",
             }}
             valuePrefix="$"
             useHTML
-            pointFormat="{tooltip.valuePrefix}{point.y}"
+            pointFormat="<b style='padding:5px 15px;font-size:12px;font-weight:500;height:26px'>{tooltip.valuePrefix}{point.y}</b>"
             // format={"<b style='font-family:500'></b>"}
           />
           <ReactChart

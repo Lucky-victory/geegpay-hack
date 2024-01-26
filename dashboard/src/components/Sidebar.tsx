@@ -17,7 +17,7 @@ export default function Sidebar() {
         justifyContent={"space-between"}
         maxH={"876px"}
         h={"full"}
-        bg={"sidebarBg"}
+        bg={"blue.500"}
       ></Flex>
     </Box>
   );

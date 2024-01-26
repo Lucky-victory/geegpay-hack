@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fonts.PlusJakartaSans.variable}>
-      <body className={fonts.PlusJakartaSans.variable}>
+      <body >
         <CustomChakraProvider>{children}</CustomChakraProvider>
       </body>
     </html>
