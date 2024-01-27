@@ -1,5 +1,13 @@
 //@ts-nocheck
-import { Button, Flex, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  HStack,
+  Heading,
+  Image,
+  Text,
+  theme,
+} from "@chakra-ui/react";
 import {
   HighchartsChart,
   HighchartsProvider,
@@ -10,14 +18,38 @@ import {
   Tooltip,
 } from "react-jsx-highcharts";
 
-import Highcharts from "highcharts";
+import Highcharts, { isNumber } from "highcharts";
+import { useEffect, useRef, useState } from "react";
 
 export default function ChartComp() {
+  const chartContainerRef = useRef<HTMLDivElement>();
+  const [chartWidth, setChartWidth] = useState(0);
+  const computePointWidth = (chartW) =>
+    chartW < 400 ? 20 : chartW < 600 ? 25 : 30;
+  function handleWindowResize() {
+    if (chartContainerRef.current) {
+      const chartContainerRect =
+        chartContainerRef.current.getBoundingClientRect();
+
+      const chartW =
+        chartContainerRect.width -
+        2 * parseFloat(getComputedStyle(chartContainerRef.current).paddingLeft);
+
+      setChartWidth(chartW);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
   return (
     <Flex
       direction={"column"}
       minW={{ base: "full", xl: "350px" }}
-      px={{ base: 3, lg: 5 }}
+      px={{ base: 3, md: 4, lg: 5 }}
       py={4}
       w={{ base: "full" }}
       flex={1}
@@ -27,6 +59,7 @@ export default function ChartComp() {
       rounded={"14px"}
       bg={"white"}
       pos={"relative"}
+      ref={chartContainerRef}
     >
       <Flex mb={"10px"} justify={"space-between"}>
         <Heading
@@ -65,13 +98,13 @@ export default function ChartComp() {
           </Button>
         </HStack>
       </Flex>
-      {/* <HighchartsProvider Highcharts={Highcharts}>
+      <HighchartsProvider Highcharts={Highcharts}>
         <HighchartsChart
-          plotOptions={{
-            column: {
-              clip: false,
-            },
-          }}
+        // plotOptions={{
+        //   column: {
+        //     clip: false,
+        //   },
+        // }}
         >
           <Tooltip
             headerFormat=""
@@ -90,17 +123,20 @@ export default function ChartComp() {
             // format={"<b style='font-family:500'></b>"}
           />
           <ReactChart
+            reflow={true}
+            width={chartWidth}
             style={{ flex: 1 }}
             height={"312px"}
             // backgroundColor={"red"}
-            spacingLeft={4}
-            spacingRight={4}
+            spacingLeft={2}
+            spacingRight={2}
             spacingBottom={13}
             // spacingTop={10}
           />
           <XAxis
             lineWidth={0}
             labels={{
+              x: -10,
               style: {
                 fontFamily: "var(--font-jakarta)",
                 fontWeight: 600,
@@ -193,8 +229,8 @@ export default function ChartComp() {
                   },
                 },
               }}
-              pointWidth={30}
-              color={"#34CAA5"}
+              pointWidth={computePointWidth(chartWidth)}
+              color={"rgba(52, 202, 165, 0.12)"}
               borderRadius={"50px"}
               borderWidth={0}
               data={[
@@ -204,7 +240,7 @@ export default function ChartComp() {
             />
           </YAxis>
         </HighchartsChart>
-      </HighchartsProvider> */}
+      </HighchartsProvider>
     </Flex>
   );
 }
