@@ -43,7 +43,7 @@ export default function Cards() {
         md: "repeat(2,1fr)",
         base: "1fr",
       }}
-      maxW={{ xl: "500px", "2xl": "500px", base: "auto" }}
+      maxW={{ xl: "490px", "2xl": "500px", base: "auto" }}
       // wrap={"wrap"}
     >
       {cardData.map((data, i) => (
@@ -78,7 +78,7 @@ export function Card({ icon, title, content, isHigh = true }: CardProps) {
       <VStack
         m={0}
         align={"start"}
-        p={4}
+        p={{ base: 3, "2xl": 4 }}
         h={"179px"}
         gap={"10px"}
         rounded={"14px"}

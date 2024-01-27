@@ -79,7 +79,7 @@ export function SidebarInner({ isOpen = false }: { isOpen?: boolean }) {
       flexShrink={0}
       zIndex={50}
       h={"full"}
-      // className="sidebar-main-wrap"
+      className="sidebar-main-wrap"
       pb={10}
     >
       <Box

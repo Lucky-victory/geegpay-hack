@@ -25,7 +25,7 @@ export default function ChartComp() {
   const chartContainerRef = useRef<HTMLDivElement>();
   const [chartWidth, setChartWidth] = useState(0);
   const computePointWidth = (chartW) =>
-    chartW < 400 ? 20 : chartW < 600 ? 25 : 30;
+    chartW > 0 && chartW < 400 ? 20 : chartW > 0 && chartW < 600 ? 25 : 30;
   function handleWindowResize() {
     if (chartContainerRef.current) {
       const chartContainerRect =
