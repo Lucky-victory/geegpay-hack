@@ -1,15 +1,22 @@
+:root {
+  --sidebar-width: 80px;
+}
 .section-wrap {
-  margin-left: 80px;
+  margin-left: var(--sidebar-width);
 }
 @media screen and (max-width: 700px) {
+  :root {
+    --sidebar-width: 60px;
+  }
   .sidebar-main-wrap {
-    width: 60px !important;
+    width: var(--sidebar-width) !important;
   }
   .section-wrap {
-    margin-left: 60px;
+    margin-left: var(--sidebar-width) !important;
   }
 }
 @media screen and (min-width: 1380px) {
+  
   .section-wrap {
     margin-left: 0 !important;
   }
@@ -17,12 +24,18 @@
     position: relative !important;
   }
 }
-@media screen and (max-height: 730px) {
+@media screen and (max-height: 780px) {
   .sidebar-inner {
     gap: 6px !important;
   }
   .sidebar-nav-links {
-    gap: 8px !important;
+    gap: 6px !important;
+  }
+  .nav-link {
+    height: 36px !important;
+
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
   }
   .sidebar-main-wrap {
     padding-bottom: 25px !important;

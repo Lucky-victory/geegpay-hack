@@ -42,20 +42,20 @@ export default function SalesReport() {
   ];
   return (
     <Box
-      maxW={{ xl: "500px", "2xl": "500px", base: "auto" }}
+      maxW={{ xl: "488px", "2xl": "488px", base: "auto" }}
       border={"1px"}
-      minW={"350px"}
+      minW={{ xl: "350px", base: "100%" }}
       borderColor={"strokeColor"}
       rounded={"14px"}
       bg={"white"}
       flex={1}
-      px={"18px"}
+      px={{ base: 3, lg: "18px" }}
       py={4}
     >
-      <Stack gap={5}>
+      <Stack gap={{ base: 4, xl: 5 }}>
         <SectionHeader title="Top Platform" />
 
-        <Stack align={"flex-start"} gap={5}>
+        <Stack align={"flex-start"} gap={{ base: 4, xl: 5 }}>
           {data.map((d, i) => (
             <Stack key={"sales" + i} gap={"17px"} w={"full"}>
               <Heading
@@ -85,10 +85,14 @@ export default function SalesReport() {
               <HStack
                 justify={"space-between"}
                 color={"appGray.600"}
-                fontSize={"18px"}
+                fontSize={{ base: "16px", xl: "18px" }}
               >
-                <Text as={"span"}>${d.amount}</Text>
-                <Text as={"span"}>+{d.percent}%</Text>
+                <Text as={"span"} flexShrink={0}>
+                  ${d.amount}
+                </Text>
+                <Text as={"span"} flexShrink={0}>
+                  +{d.percent}%
+                </Text>
               </HStack>
             </Stack>
           ))}

@@ -16,8 +16,8 @@ export default function ChartComp() {
   return (
     <Flex
       direction={"column"}
-      minW={"350px"}
-      px={5}
+      minW={{ base: "full", xl: "350px" }}
+      px={{ base: 3, lg: 5 }}
       py={4}
       w={{ base: "full" }}
       flex={1}
@@ -65,7 +65,7 @@ export default function ChartComp() {
           </Button>
         </HStack>
       </Flex>
-      <HighchartsProvider Highcharts={Highcharts}>
+      {/* <HighchartsProvider Highcharts={Highcharts}>
         <HighchartsChart
           plotOptions={{
             column: {
@@ -204,7 +204,7 @@ export default function ChartComp() {
             />
           </YAxis>
         </HighchartsChart>
-      </HighchartsProvider>
+      </HighchartsProvider> */}
     </Flex>
   );
 }

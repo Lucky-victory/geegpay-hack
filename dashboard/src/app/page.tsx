@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Stack } from "@chakra-ui/react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
@@ -19,16 +19,25 @@ export default function Home() {
       bg={"appBg"}
       p={0}
     >
-      <Sidebar />
-      <Stack gap={0} className="section-wrap" flex={1}>
+      <Box>
+        <Sidebar />
+      </Box>
+      <Stack
+        overflowX={"hidden"}
+        bg={"red"}
+        gap={0}
+        ml={{ base: "60px", lg: "80px" }}
+        className="section-wrap"
+        flex={1}
+      >
         <Header />
 
-        <Box bg={"appGray.50"} p={5} maxW={"full"}>
-          <Flex gap={"4"} wrap={"wrap"}>
+        <Box bg={"appGray.50"} p={{ base: 3, lg: 5 }} maxW={"full"}>
+          <Flex gap={{ base: 3, lg: 4 }} wrap={"wrap"}>
             <ChartComp />
             <Cards />
           </Flex>
-          <Flex my={4} gap={"4"} wrap={"wrap"} maxW={"full"}>
+          <Flex my={4} gap={{ base: 3, lg: 4 }} wrap={"wrap"} maxW={"full"}>
             <FilesTable />
             <SalesReport />
           </Flex>

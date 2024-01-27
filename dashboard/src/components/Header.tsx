@@ -17,7 +17,7 @@ export default function Header() {
     <HStack
       w={"full"}
       py={"18px"}
-      px={5}
+      p={{ base: 3, lg: 5 }}
       bg={"appGray.50"}
       borderBottom={"1px"}
       borderBottomColor={"#E5EAEF"}
@@ -26,18 +26,27 @@ export default function Header() {
         {/* SEARCH AREA START */}
 
         <HStack justify={"space-between"} flex={1} maxW={"810px"}>
+          <Box>
+            <IconButton aria-label="toggle sidebar"></IconButton>
+          </Box>
           <Heading fontSize={"20px"} fontWeight={"medium"}>
             Dashboard
           </Heading>
-          <Image
-            hideFrom={"850px"}
-            src="/icons/search.svg"
-            zIndex={4}
-            w={"18px"}
-            h={"18px"}
-            alt=""
-          />
-          <Flex pos={"relative"} width={"349px"} hideBelow={"850px"}>
+          <IconButton
+            variant={"unstyled"}
+            _hover={{ bg: "appGray.100" }}
+            rounded={"27px"}
+            p={"11px"}
+            h={"40px"}
+            w={"40px"}
+            border={"1px"}
+            borderColor={"appLightGray"}
+            aria-label="notification"
+            hideFrom={"lg"}
+          >
+            <Image src="/icons/search.svg" alt="" />
+          </IconButton>
+          <Flex pos={"relative"} width={"349px"} hideBelow={"lg"}>
             <Image
               src="/icons/search.svg"
               zIndex={4}
@@ -73,7 +82,7 @@ export default function Header() {
           {/* NOTIFICATION AREA START */}
 
           <HStack maxW={"253px"} gap={{ base: 3, lg: 5 }}>
-            <HStack px={4} py={2} gap={2} hideBelow={"550px"} flexShrink={0}>
+            <HStack px={4} py={2} gap={2} hideBelow={"md"} flexShrink={0}>
               <Image src="/icons/calender.svg" alt="" />
               <Text as={"span"} fontWeight={"medium"} fontSize={"14px"}>
                 Nov

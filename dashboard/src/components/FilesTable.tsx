@@ -70,10 +70,10 @@ export default function FilesTable() {
   return (
     <Box
       maxW={"806px"}
-      minW={"350px"}
+      minW={{ xl: "350px", base: "100%" }}
       px={5}
       py={4}
-      w={{ xl: "806px", base: "full" }}
+      w={{ base: "full" }}
       flex={1}
       h={"442px"}
       border={"1px"}
@@ -98,7 +98,7 @@ export default function FilesTable() {
           </Thead>
           <Tbody className="files-table-body">
             {data.map((d, i) => (
-              <Tr key={"data" + i}>
+              <Tr key={"data" + i} h={"45px"}>
                 <Td paddingInlineStart={0}>
                   <HStack gap={"10px"}>
                     <Image
