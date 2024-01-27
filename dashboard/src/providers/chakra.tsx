@@ -7,10 +7,11 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
   initialColorMode: "light",
 };
-const theme = extendTheme({ fonts: {
-      heading: 'var(--font-jakarta)',
-      body: 'var(--font-jakarta)',
-    },
+const theme = extendTheme({
+  fonts: {
+    heading: "var(--font-jakarta)",
+    body: "var(--font-jakarta)",
+  },
   config,
   colors: {
     strokeColor: "#EDF2F7",

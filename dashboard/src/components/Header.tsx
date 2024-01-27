@@ -27,9 +27,8 @@ export default function Header({ isOpen, onClose, onOpen }) {
         {/* SEARCH AREA START */}
 
         <HStack justify={"space-between"} flex={1} maxW={"810px"}>
-          <Box>
+          <Box display={{ base: "block", sm: "none" }}>
             <IconButton
-              display={{ base: "block", sm: "none" }}
               onClick={onOpen}
               aria-label="toggle sidebar"
               bg={"transparent"}

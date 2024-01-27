@@ -1,5 +1,12 @@
 "use client";
-import { Box, Flex, Grid, GridItem, Stack, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Stack,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
@@ -17,7 +24,7 @@ export default function Home() {
       maxW={"1440px"}
       maxH={"1080px"}
       mx={"auto"}
-      bg={"appRed"}
+      bg={"appBg"}
       p={0}
     >
       {/* <Box display={{ base: "none", sm: "block" }} bg={"red"}> */}
@@ -26,7 +33,12 @@ export default function Home() {
       <Stack
         overflowX={"hidden"}
         gap={0}
-        ml={{ base: "0px", sm: "60px", lg: "80px" }}
+        sx={{ "--sidebar-width": isOpen ? "80px" : "0px" }}
+        ml={{
+          base: "var(--sidebar-width)",
+          sm: "60px!important",
+          lg: "80px!important",
+        }}
         className="section-wrap"
         flex={1}
       >

@@ -20,18 +20,17 @@ import {
 
 //@ts-ignore
 export default function Sidebar({ isOpen, onClose, onOpen }) {
-  // const { isOpen, onClose, onOpen } = useDisclosure();
-
   return (
     <>
       <Drawer isOpen={isOpen} onClose={onClose} placement="left">
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent maxW={"80px"} pos={"relative"}>
           <DrawerHeader>
             <DrawerCloseButton />
           </DrawerHeader>
           <DrawerBody>
-            <SidebarInner />
+            dxcfjnk
+            <SidebarInner isOpen={isOpen} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
@@ -39,7 +38,7 @@ export default function Sidebar({ isOpen, onClose, onOpen }) {
     </>
   );
 }
-export function SidebarInner() {
+export function SidebarInner({ isOpen = false }: { isOpen?: boolean }) {
   const linkStyles = {
     p: "10px",
     pos: "relative" as ResponsiveValue<"relative">,
@@ -73,13 +72,14 @@ export function SidebarInner() {
       pos={"fixed"}
       top={0}
       left={0}
-      // overflow={"hidden"}
-      w={{ base: "0px", sm: "60px", lg: "80px" }}
-      display={{ base: "none", sm: "block" }}
+      maxW={"80px"}
+      sx={{ "--sidebar-width": isOpen ? "80px!important" : "0px" }}
+      w={{ base: "var(--sidebar-width)", sm: "60px", lg: "80px" }}
+      display={{ base: isOpen ? "block" : "none", sm: "block" }}
       flexShrink={0}
       zIndex={50}
       h={"full"}
-      className="sidebar-main-wrap"
+      // className="sidebar-main-wrap"
       pb={10}
     >
       <Box
