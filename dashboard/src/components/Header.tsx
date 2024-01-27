@@ -12,7 +12,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-export default function Header() {
+//@ts-ignore
+export default function Header({ isOpen, onClose, onOpen }) {
   return (
     <HStack
       w={"full"}
@@ -27,7 +28,12 @@ export default function Header() {
 
         <HStack justify={"space-between"} flex={1} maxW={"810px"}>
           <Box>
-            <IconButton aria-label="toggle sidebar" bg={"transparent"}>
+            <IconButton
+              display={{ base: "block", sm: "none" }}
+              onClick={onOpen}
+              aria-label="toggle sidebar"
+              bg={"transparent"}
+            >
               <Image alt="" src="/icons/menu.svg" w={"30px"} h={"30px"} />
             </IconButton>
           </Box>

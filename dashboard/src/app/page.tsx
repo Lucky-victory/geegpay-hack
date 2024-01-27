@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Grid, GridItem, Stack } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Stack, useDisclosure } from "@chakra-ui/react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import Cards from "@/components/Cards";
@@ -8,6 +8,7 @@ import FilesTable from "@/components/FilesTable";
 import SalesReport from "@/components/SalesReport";
 
 export default function Home() {
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <Flex
       as="main"
@@ -20,7 +21,7 @@ export default function Home() {
       p={0}
     >
       {/* <Box display={{ base: "none", sm: "block" }} bg={"red"}> */}
-      <Sidebar />
+      <Sidebar onClose={onClose} isOpen={isOpen} onOpen={onOpen} />
       {/* </Box> */}
       <Stack
         overflowX={"hidden"}
@@ -29,7 +30,7 @@ export default function Home() {
         className="section-wrap"
         flex={1}
       >
-        <Header />
+        <Header onClose={onClose} isOpen={isOpen} onOpen={onOpen} />
 
         <Box bg={"appGray.50"} p={{ base: 3, lg: 5 }} maxW={"full"}>
           <Flex gap={{ base: 3, lg: 4 }} wrap={"wrap"}>
