@@ -16,17 +16,16 @@ export default function Home() {
       maxW={"1440px"}
       maxH={"1080px"}
       mx={"auto"}
-      bg={"appBg"}
+      bg={"appRed"}
       p={0}
     >
-      <Box>
-        <Sidebar />
-      </Box>
+      {/* <Box display={{ base: "none", sm: "block" }} bg={"red"}> */}
+      <Sidebar />
+      {/* </Box> */}
       <Stack
         overflowX={"hidden"}
-        bg={"red"}
         gap={0}
-        ml={{ base: "60px", lg: "80px" }}
+        ml={{ base: "0px", sm: "60px", lg: "80px" }}
         className="section-wrap"
         flex={1}
       >

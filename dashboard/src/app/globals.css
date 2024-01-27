@@ -4,6 +4,11 @@
 .section-wrap {
   margin-left: var(--sidebar-width);
 }
+@media screen and (max-width: 479px) {
+  :root {
+    --sidebar-width: 0px !important;
+  }
+}
 @media screen and (max-width: 700px) {
   :root {
     --sidebar-width: 60px;
@@ -16,7 +21,6 @@
   }
 }
 @media screen and (min-width: 1380px) {
-  
   .section-wrap {
     margin-left: 0 !important;
   }

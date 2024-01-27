@@ -49,8 +49,9 @@ export default function Sidebar() {
         pos={"fixed"}
         top={0}
         left={0}
-        w={{ base: "60px", lg: "80px" }}
-        display={{ base: "none", md: "block" }}
+        // overflow={"hidden"}
+        w={{ base: "0px", sm: "60px", lg: "80px" }}
+        display={{ base: "none", sm: "block" }}
         flexShrink={0}
         zIndex={50}
         h={"full"}

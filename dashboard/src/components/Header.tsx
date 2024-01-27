@@ -27,18 +27,26 @@ export default function Header() {
 
         <HStack justify={"space-between"} flex={1} maxW={"810px"}>
           <Box>
-            <IconButton aria-label="toggle sidebar"></IconButton>
+            <IconButton aria-label="toggle sidebar" bg={"transparent"}>
+              <Image alt="" src="/icons/menu.svg" w={"30px"} h={"30px"} />
+            </IconButton>
           </Box>
-          <Heading fontSize={"20px"} fontWeight={"medium"}>
+          <Heading
+            fontSize={{ base: "16px", sm: "20px" }}
+            fontWeight={"medium"}
+          >
             Dashboard
           </Heading>
           <IconButton
             variant={"unstyled"}
             _hover={{ bg: "appGray.100" }}
             rounded={"27px"}
-            p={"11px"}
-            h={"40px"}
-            w={"40px"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            display={"flex"}
+            p={{ base: "4px", sm: "11px" }}
+            w={{ base: "38px", sm: "40px" }}
+            h={{ base: "38px", sm: "40px" }}
             border={"1px"}
             borderColor={"appLightGray"}
             aria-label="notification"
@@ -78,7 +86,7 @@ export default function Header() {
         </HStack>
         {/* SEARCH AREA END */}
 
-        <HStack gap={5} maxW={"488px"} flexShrink={0}>
+        <HStack gap={{ base: 3, sm: 5 }} maxW={"488px"} flexShrink={0}>
           {/* NOTIFICATION AREA START */}
 
           <HStack maxW={"253px"} gap={{ base: 3, lg: 5 }}>
@@ -96,9 +104,12 @@ export default function Header() {
               variant={"unstyled"}
               _hover={{ bg: "appGray.100" }}
               rounded={"27px"}
-              p={"11px"}
-              h={"40px"}
-              w={"40px"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              display={"flex"}
+              p={{ base: "4px", sm: "11px" }}
+              w={{ base: "38px", sm: "40px" }}
+              h={{ base: "38px", sm: "40px" }}
               border={"1px"}
               borderColor={"appLightGray"}
               aria-label="notification"
@@ -112,14 +123,14 @@ export default function Header() {
           <Button
             bg={"transparent"}
             _hover={{ bg: "appGray.100" }}
-            h={"52px"}
+            h={{ base: "44px", sm: "52px" }}
             flexShrink={0}
             alignItems={"center"}
             maxW={"215px"}
             border={"1px"}
             borderColor={"appLightGray"}
-            px={2}
-            py={"6px"}
+            px={{ base: "6px", sm: 2 }}
+            py={{ base: "3px", sm: "6px" }}
             rounded={"28px"}
             gap={3}
           >
