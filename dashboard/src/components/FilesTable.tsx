@@ -20,7 +20,6 @@ import {
 import SectionHeader from "./SectionHeader";
 
 export default function FilesTable() {
-  type Status = "Paid" | "Refund";
   const data = [
     {
       name: "Marcus Bergson",
@@ -58,6 +57,7 @@ export default function FilesTable() {
       image: "/guy2.jpg",
     },
   ];
+  type Status = "Paid" | "Refund";
   const statusColor = (status: Status) =>
     status === "Paid" ? "appGreen" : "appRed";
   const tableHeadStyles = {
